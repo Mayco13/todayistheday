@@ -1,48 +1,308 @@
+@charset "UTF-8";
+
+/* =========================================
+   1. STYLE (視覺風格、字體與色彩計畫)
+   負責定義：全站色彩、字體排版、基本元素的視覺呈現
+   ========================================= */
 :root {
-    --meadow-green: #0C6038;
-    --outerspace: #2D4C39;
-    --mustard-green: #808847;
-    --peach: #F1D2A1;
-    --crimson: #8B0000;
-    --bg-light: #FBFBF9;
-    --text-dark: #333333;
+    /* 韓系文學色彩計畫 */
+    --color-bg: #F9F8F6;       /* 米白 - 紙張底色 */
+    --color-text: #333333;     /* 深灰 - 閱讀文字 */
+    --color-cyan: #739E82;     /* 青綠 - 綠川點綴 */
+    --color-olive: #4A6B5D;    /* 橄欖綠 - 標題與強調 */
+    --color-brick: #A75D4D;    /* 磚紅 - Hover 與按鈕 */
+    --color-line: #E5E2DA;     /* 細緻分隔線 */
+    
+    --font-serif: 'Noto Serif TC', serif;
+    --font-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Noto Serif TC', 'PMingLiU', serif; /* 帶有文學感的明體/襯線字體 */
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-serif);
     line-height: 1.8;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased; /* 讓字體更柔和滑順 */
 }
 
-.sidebar {
-    background-color: var(--outerspace);
-    color: var(--peach);
-}
-
-.sidebar-header h1 {
-    color: var(--mustard-green);
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-}
-
-.sidebar-nav a {
-    color: var(--peach);
+a {
     text-decoration: none;
+    color: inherit;
     transition: color 0.3s ease;
 }
 
-.sidebar-nav a:hover {
-    color: var(--mustard-green);
+/* 文字排版樣式 */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-olive);
+    letter-spacing: 2px;
+    line-height: 1.4;
+}
+
+.sidebar-quote {
+    font-size: 0.95rem;
+    color: var(--color-cyan);
+    padding-left: 12px;
+    border-left: 2px solid var(--color-brick);
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.breadcrumbs .separator {
+    margin: 0 0.5rem;
+    color: var(--color-line);
 }
 
 .section-title {
-    color: var(--meadow-green);
-    border-bottom: 2px solid var(--mustard-green);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-olive);
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-line);
+    padding-bottom: 0.5rem;
 }
 
+.section-title span {
+    font-size: 0.9rem;
+    color: #999;
+    letter-spacing: 1.5px;
+    font-family: var(--font-sans);
+}
+
+.section-desc {
+    color: #555;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+/* 圖片通用視覺樣式 */
+.radius-img {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* 極柔和的陰影 */
+}
+
+
+/* =========================================
+   2. LAYOUT (版面配置與骨架)
+   負責定義：Grid 網格系統、Flexbox 彈性盒子、內外距與對齊
+   ========================================= */
+
+/* 網頁主架構 (CSS Grid) */
+.site-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* 側邊欄固定寬度，主內容填滿 */
+    min-height: 100vh;
+}
+
+/* 側邊欄配置 (Flexbox) */
+.sidebar {
+    border-right: 1px solid var(--color-line);
+    padding: 3rem 2.5rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo { margin-bottom: 2.5rem; }
+.sidebar-quote { margin-bottom: 3.5rem; }
+
+.sidebar-nav ul { list-style: none; }
+.sidebar-nav li { margin-bottom: 1.5rem; }
+.sidebar-nav a:hover { color: var(--color-brick); }
+
+.sidebar-footer {
+    margin-top: auto; /* 將 footer 推到底部 */
+}
+
+/* 主內容區域配置 */
+.main-content {
+    padding: 3rem 5rem 5rem;
+    max-width: 1200px; /* 限制最大寬度，避免大螢幕字行過長 */
+}
+
+.breadcrumbs { margin-bottom: 4rem; }
+
+/* 區塊共用外距 */
+.content-section { margin-bottom: 7rem; }
+.section-title { margin-bottom: 1.5rem; }
+.section-desc { margin-bottom: 2rem; max-width: 600px; }
+
+/* Hero 頂部視覺區 */
+.hero-section {
+    margin-bottom: 6rem;
+    border-bottom: 1px solid var(--color-line);
+    padding-bottom: 5rem;
+}
 .hero-text h2 {
-    color: var(--meadow-green);
-    font-size: 2.5rem;
-    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+    font-size: 3.8rem;
+    font-weight: 400;
+    color: var(--color-olive);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    letter-spacing: 4px;
+}
+.hero-text .subtitle {
+    font-size: 1.2rem;
+    color: var(--color-cyan);
+    letter-spacing: 2px;
+    margin-bottom: 3.5rem;
+}
+.hero-img-style {
+    height: 500px;
+    margin-top: 2rem;
+}
+
+/* 左右圖文區塊 (Flexbox) */
+.split-section {
+    display: flex;
+    gap: 5rem; /* 圖文之間的留白 */
+    align-items: center; /* 垂直置中 */
+}
+.split-section .text-block, 
+.split-section .image-block {
+    flex: 1; /* 左右各佔 50% */
+}
+.reverse-layout {
+    flex-direction: row-reverse; /* 讓版面交錯 (右圖左文) */
+}
+
+/* 幕後花絮照片網格 (CSS Grid) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 兩欄式排列 */
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+/* 圖片通用佈局 */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 影片區塊佈局 (維持 16:9) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+
+/* =========================================
+   3. RESPONSIVE (RWD 響應式設計)
+   負責定義：裝置適應，避免文字裁切、圖片變形與水平溢位
+   ========================================= */
+
+/* Tablet 平板尺寸 (1024px 以下) */
+@media (max-width: 1024px) {
+    .site-wrapper {
+        grid-template-columns: 240px 1fr; /* 稍微縮小側邊欄 */
+    }
+    
+    .main-content {
+        padding: 3rem 4rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 3rem;
+    }
+    
+    .split-section {
+        flex-direction: column; /* 圖文區塊改為上下排列 */
+        gap: 3rem;
+    }
+    
+    .reverse-layout {
+        flex-direction: column; /* 取消左右交錯 */
+    }
+    
+    .split-section .text-block, 
+    .split-section .image-block {
+        width: 100%;
+    }
+    
+    .section-desc {
+        max-width: 100%; /* 放寬文字區塊限制 */
+    }
+}
+
+/* Mobile 手機尺寸 (768px 以下) */
+@media (max-width: 768px) {
+    /* 打破 Grid，改為單欄式垂直排列 */
+    .site-wrapper {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* 將側邊欄轉為頂部導覽列 */
+    .sidebar {
+        height: auto;
+        position: relative;
+        padding: 2rem;
+        border-right: none;
+        border-bottom: 1px solid var(--color-line);
+        background-color: rgba(249, 248, 246, 0.95); /* 微微透明感 */
+        z-index: 10;
+    }
+    
+    .sidebar .logo { margin-bottom: 1rem; text-align: center; }
+    .sidebar-quote { margin-bottom: 1.5rem; text-align: center; border-left: none; padding-left: 0; }
+    
+    /* 導覽列改為橫向滑動或自動折行 */
+    .sidebar-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .sidebar-nav li { margin-bottom: 0; }
+    
+    .sidebar-footer { display: none; /* 手機版隱藏 footer 以節省空間 */ }
+    
+    /* 主內容區距調整 */
+    .main-content {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .breadcrumbs { margin-bottom: 2rem; }
+    .content-section { margin-bottom: 4rem; }
+    
+    .hero-section { padding-bottom: 3rem; margin-bottom: 4rem; }
+    .hero-text h2 { font-size: 2.4rem; letter-spacing: 2px; }
+    .hero-text .subtitle { font-size: 1rem; margin-bottom: 2rem; }
+    .hero-img-style { height: 280px; }
+    
+    /* 縮小標題字體 */
+    .section-title { font-size: 1.5rem; }
+    
+    /* 幕後花絮改為單欄排列 */
+    .gallery-grid {
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
 }
