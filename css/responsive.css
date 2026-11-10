@@ -1,1 +1,38 @@
+@media screen and (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-nav ul {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .sidebar-nav li {
+        margin-bottom: 0;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .section-block {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+}
