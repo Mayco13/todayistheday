@@ -1,1 +1,48 @@
+:root {
+    --meadow-green: #0C6038;
+    --outerspace: #2D4C39;
+    --mustard-green: #808847;
+    --peach: #F1D2A1;
+    --crimson: #8B0000;
+    --bg-light: #FBFBF9;
+    --text-dark: #333333;
+}
 
+body {
+    font-family: 'Noto Serif TC', 'PMingLiU', serif; /* 帶有文學感的明體/襯線字體 */
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+.sidebar {
+    background-color: var(--outerspace);
+    color: var(--peach);
+}
+
+.sidebar-header h1 {
+    color: var(--mustard-green);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+}
+
+.sidebar-nav a {
+    color: var(--peach);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    color: var(--mustard-green);
+}
+
+.section-title {
+    color: var(--meadow-green);
+    border-bottom: 2px solid var(--mustard-green);
+}
+
+.hero-text h2 {
+    color: var(--meadow-green);
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+}
