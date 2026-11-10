@@ -3,72 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="逢甲行銷學系大二影展專題《綠空漫泡，綠川漾沫》。打造無社交壓力、深度放鬆的日常自然藍綠空間。">
-    <meta name="author" content="李舒涵">
-    <title>綠空漫泡，綠川漾沫 | 大二影展專題介紹</title>
-    
-    <!-- 依規定將 CSS 切割為三個檔案 -->
+    <title>綠空漫泡，綠川漾沫 | 新中城，城中心 行銷影展</title>
+    <meta name="description" content="讓煩惱化為泡影，在綠川重拾清醒。為渴望日常心靈療癒的你，打造無社交壓力、深度放鬆的城市藍綠空間。">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-container">
-        <!-- 側邊欄 -->
+
+    <div class="site-wrapper">
+        <!-- 側邊欄 (Sidebar) -->
         <aside class="sidebar">
-            <div class="sidebar-header">
-                <h1>綠空漫泡<br>綠川漾沫</h1>
-                <p class="subtitle">大二影展專題</p>
-            </div>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="#home">首頁</a></li>
-                    <li><a href="#about">企劃理念</a></li>
-                    <li><a href="#story">劇情大綱</a></li>
-                    <li><a href="#gallery">幕後側拍</a></li>
-                </ul>
-            </nav>
-            <div class="sidebar-footer">
-                <p>Produced by 李舒涵</p>
+            <div class="sidebar-content">
+                <h1 class="logo">新中城<br>城中心</h1>
+                <p class="sidebar-quote">「讓煩惱化為泡影，<br>在綠川重拾清醒。」</p>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#about">策展理念</a></li>
+                        <li><a href="#film-screening">企劃放映室</a></li>
+                        <li><a href="#green-axis">綠空漫泡</a></li>
+                        <li><a href="#green-river">綠川漾沫</a></li>
+                        <li><a href="#behind-scenes">幕後紀實</a></li>
+                    </ul>
+                </nav>
+                <div class="sidebar-footer">
+                    <p>&copy; 2026 行銷專題團隊</p>
+                </div>
             </div>
         </aside>
 
-        <!-- 主要內容 -->
+        <!-- 主要內容區域 (Main Content) -->
         <main class="main-content">
-            <section id="home" class="section-block hero-section">
+            <div class="breadcrumbs">
+                <span>首頁</span> <span class="separator">/</span> <span>綠空漫泡，綠川漾沫</span>
+            </div>
+
+            <!-- 頂部視覺區 (Hero Section) -->
+            <section class="hero-section">
                 <div class="hero-text">
-                    <h2>讓煩惱化為泡影，<br>在綠川重拾清醒。</h2>
+                    <h2>綠空漫泡，<br>綠川漾沫。</h2>
+                    <p class="subtitle">無社交壓力、深度放鬆的日常藍綠空間</p>
+                </div>
+                <!-- 使用綠空廊道全景作為主視覺 -->
+                <div class="hero-image">
+                    <img src="images/images.jpg" alt="台中綠空廊道" class="responsive-img hero-img-style">
                 </div>
             </section>
 
-            <section id="about" class="section-block">
-                <h2 class="section-title">企劃理念</h2>
-                <div class="content-box">
-                    <p>在快節奏的都市生活中，人們不需遠赴郊外或付出高昂時間成本，就能在鄰近日常通勤動線中享受純粹的慢活。綠川水岸與綠空廊道具備深厚的歷史底蘊與生態品質，我們將其打造成「無社交壓力、深度放鬆」的避難所。</p>
+            <!-- 策展理念 (About Section) -->
+            <section id="about" class="content-section">
+                <h3 class="section-title">策展理念 <span>Concept</span></h3>
+                <p class="section-desc">
+                    隨著都市化加速與生活步調緊湊，當代休閒產業轉向重視身心療癒。台中舊城區的綠川與綠空廊道，位處交通核心並融合生態與歷史記憶，形塑出免付費、隨時可及的都市綠洲。<br><br>
+                    本企劃旨在透過影像敘事，引導大眾放慢腳步，重新喚醒對自然空間與舊城區歷史的共鳴，在日常生活中找回內心的平靜。
+                </p>
+            </section>
+
+            <!-- 企劃影片區 (Video Section) -->
+            <section id="film-screening" class="content-section">
+                <h3 class="section-title">企劃放映室 <span>Screening</span></h3>
+                <p class="section-desc">
+                    <strong>故事大綱：</strong>講述主角在排山倒海的催促與窒息感中，行經綠空廊道時穿越象徵壓力分界的泡泡，展開了一場尋找風景的漫步之旅。最終在綠川河畔放下手機，伴隨泡泡破裂的聲響展現出內心的徹底釋懷。
+                </p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/N2L7Un9Li9c" title="綠空漫泡，綠川漾沫 影展企劃" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </section>
 
-            <section id="story" class="section-block">
-                <h2 class="section-title">劇情大綱</h2>
-                <div class="content-box">
-                    <p>主角在排山倒海的電話催促與窒息感中，身心疲憊近乎麻木。滑著手機時，看見綠空廊道與綠川的短影音，萌生了出門喘息的念頭。</p>
-                    <p>行經綠空廊道時，前方出現一層透明膜。觸碰的瞬間，膜化為泡泡，急促的噪音淡去，取而代之的是平靜世界。隨後在「酷庫」復古商店買了一張舊明信片，展開尋找風景之旅。</p>
-                    <p>抵達綠川河畔，主角找了位置坐下放下手機，伴隨著眼前透明泡泡「啵」一聲破裂，內心獲得徹底的釋懷與平靜。</p>
+            <!-- 展區介紹：綠空漫泡 -->
+            <section id="green-axis" class="content-section split-section">
+                <div class="text-block">
+                    <h3 class="section-title">綠空漫泡 <span>1908 Green Axis</span></h3>
+                    <p class="section-desc">由縱貫鐵路舊山線地面鐵道經空間再造，轉型為結合步行與藝文的線性綠空間。漫步於百年的鐵道記憶之上，將繁雜的思緒化為漫天輕盈的泡沫，這是一段屬於你與台中的高空散步。</p>
+                </div>
+                <div class="image-block">
+                    <img src="images/images.jpg" alt="綠空廊道" class="responsive-img radius-img">
                 </div>
             </section>
 
-            <section id="gallery" class="section-block">
-                <h2 class="section-title">幕後側拍</h2>
-                <div class="image-gallery">
-                    <img src="images/images.jpg" alt="綠空廊道實景">
-                    <img src="images/442682.jpg" alt="綠川水岸實景">
-                    <img src="images/442677.jpg" alt="劇組攝影側拍">
-                    <img src="images/442676.jpg" alt="酷庫商店場景側拍">
-                    <img src="images/442675.jpg" alt="劇組人員側拍">
-                    <img src="images/442678.jpg" alt="綠空廊道林蔭側拍">
+            <!-- 展區介紹：綠川漾沫 -->
+            <section id="green-river" class="content-section split-section reverse-layout">
+                <div class="image-block">
+                    <img src="images/442682.jpg" alt="綠川水岸步道" class="responsive-img radius-img">
+                </div>
+                <div class="text-block">
+                    <h3 class="section-title">綠川漾沫 <span>Green River</span></h3>
+                    <p class="section-desc">自日治時期水文運輸起，歷經市府水環境改善工程，轉型為兼具親水、教育與生態的市中心廊帶。在這裡，零門檻的順路休憩，讓你在日常的縫隙中獲得最純粹的心靈療癒。</p>
                 </div>
             </section>
+
+            <!-- 幕後紀實 (Behind the Scenes) - 新增區塊放入你們的拍攝花絮 -->
+            <section id="behind-scenes" class="content-section">
+                <h3 class="section-title">幕後紀實 <span>Behind the Scenes</span></h3>
+                <p class="section-desc">從舊城區的古物店到陽光灑落的綠空步道，捕捉每一刻「讓煩惱化為泡影」的療癒瞬間。</p>
+                <div class="gallery-grid">
+                    <img src="images/442678.jpg" alt="拍攝花絮 - 主角演出" class="responsive-img radius-img">
+                    <img src="images/442676.jpg" alt="拍攝花絮 - 古物店內取景" class="responsive-img radius-img">
+                    <img src="images/442675.jpg" alt="拍攝花絮 - 攝影團隊" class="responsive-img radius-img">
+                    <img src="images/442679.jpg" alt="拍攝花絮 - 綠空步道取景" class="responsive-img radius-img">
+                </div>
+            </section>
+
         </main>
     </div>
+
 </body>
 </html>
